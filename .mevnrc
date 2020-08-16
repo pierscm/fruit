@@ -1,0 +1,8 @@
+{
+  "name": "fruit",
+  "template": "Default",
+  "isConfigured": {
+    "client": false,
+    "server": false
+  }
+}
