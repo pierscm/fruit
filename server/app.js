@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "html");
 
 // Static folder
-app.use(express.static(__dirname + "/views/"));
+app.use(express.static("public"));
 
 // Defining route middleware
 app.use("/api", require("./routes/api"));

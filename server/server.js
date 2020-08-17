@@ -29,12 +29,12 @@ const seedFruitDb = async () => {
   const gala = new models.Fruit({
     name: "Gala Apple",
     weight: 5.2,
-    image: "/gala.jpg",
+    image: "/gala.jpeg",
   });
   const pinkLady = new models.Fruit({
     name: "Pink Lady Apple",
     weight: 5.3,
-    image: "/pink-lady.jpg",
+    image: "/pink-lady.jpeg",
   });
 
   await banana.save();
