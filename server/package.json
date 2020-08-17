@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node --exec babel-node server.js",
     "serve": "nodemon --exec babel-node server.js",
-    "format": "prettier server.js **/*.js --write"
+    "format": "prettier server.js **/*.js --write",
+    "test": "NODE_ENV=test jest --testTimeout=10000"
   },
   "license": "ISC",
   "dependencies": {
@@ -18,10 +19,23 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.11.1",
     "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-env": "^7.0.0",
+    "@shelf/jest-mongodb": "^1.2.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
+    "jest": "^26.4.0",
     "nodemon": "^1.18.3",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "superagent": "^6.0.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
