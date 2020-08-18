@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/mevn.jpg" width="350" />
-    <HelloWorld msg="Default Boilerplate Template" />
+  <div>
+    <v-row class="text-center">
+      <v-col>
+        <h1 class="display-2 font-weight-bold mt-10">
+          Fruit Search
+        </h1>
+      </v-col>
+    </v-row>
+    <TheSearchbar />
+    <FruitList />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import FruitList from "../components/FruitList";
+import TheSearchbar from "../components/TheSearchbar";
 
 export default {
-  name: "home",
+  name: "Home",
+
   components: {
-    HelloWorld
+    FruitList,
+    TheSearchbar
   }
 };
 </script>
