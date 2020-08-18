@@ -10,6 +10,7 @@
 
 <script>
 import FruitItem from "../components/FruitItem";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Fruit",
@@ -17,6 +18,9 @@ export default {
   data: () => ({}),
   components: {
     FruitItem
+  },
+  computed: {
+    ...mapGetters(["fruitList"])
   }
 };
 </script>
