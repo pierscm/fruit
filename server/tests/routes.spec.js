@@ -52,26 +52,25 @@ describe("/fruits", () => {
     await mongoose.disconnect();
   });
 
-  it("should return all fruits", async () => {
-    const res = await request(app).get("/api/fruits/");
-    expect(res.statusCode).toBe(200);
-    expect(res.body).toHaveLength(5);
-  });
-
   it("should return a fruit when the name is provided", async () => {
-    const res = await request(app).get("/api/fruits/kiwi");
+    const res = await request(app).get("/api/fruits?fruit=kiwi");
     expect(res.statusCode).toBe(200);
     expect(res.body[0].name).toBe("kiwi");
   });
 
   it("should return multiple fruits when the name has a partial match", async () => {
-    const res = await request(app).get("/api/fruits/apple");
+    const res = await request(app).get("/api/fruits?fruit=apple");
     expect(res.statusCode).toBe(200);
     expect(res.body).toHaveLength(2);
   });
 
   it("should return a 404 when a fruit is not found", async () => {
-    const res = await request(app).get("/api/fruits/corn");
+    const res = await request(app).get("/api/fruits?fruit=corn");
     expect(res.statusCode).toBe(404);
+  });
+
+  it("handles bad requests", async() => {
+    const res = await request(app).get("/api/fruits?vegetable=pineapple");
+    expect(res.statusCode).toBe(400);
   });
 });
