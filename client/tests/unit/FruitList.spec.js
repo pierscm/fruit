@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import FruitList from "@/components/FruitList.vue";
 import Vuex from "vuex";
-import { GENERIC_ERROR_MESSAGE, NO_MATCHING_FRUIT } from '../../src/constants';
+import { GENERIC_ERROR_MESSAGE, NO_MATCHING_FRUIT } from "../../src/constants";
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
